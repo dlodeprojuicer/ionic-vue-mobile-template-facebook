@@ -1,4 +1,4 @@
-## Ionic Vue Instagram Template
+## Ionic Vue Facebook Template (W.I.P)
 
 ![Netlify Status](https://api.netlify.com/api/v1/badges/fc2b8d51-2242-440c-8f6c-f283e77154c4/deploy-status)
 
