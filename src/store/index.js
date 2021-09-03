@@ -33,8 +33,16 @@ const store = createStore({
     ],
     stories: [
       {
-        name: "Makazol",
-        image: "assets/images/makazoli.png"
+        name: "makazole",
+        image: "assets/images/makazole.png"
+      },
+      {
+        name: "jay-z",
+        image: "assets/images/jay-z.jpg"
+      },
+      {
+        name: "lewis",
+        image: "assets/images/lewis.png"
       },
       {
         name: "snoop",
@@ -43,35 +51,7 @@ const store = createStore({
       {
         name: "max",
         image: "assets/images/max.png"
-      },
-      {
-        name: "snoop",
-        image: "assets/images/snoop.png"
-      },
-      {
-        name: "lewis",
-        image: "assets/images/lewis.png"
-      },
-      {
-        name: "Makazol",
-        image: "assets/images/makazoli.png"
-      },
-      {
-        name: "snoop",
-        image: "assets/images/snoop.png"
-      },
-      {
-        name: "max",
-        image: "assets/images/max.png"
-      },
-      {
-        name: "snoop",
-        image: "assets/images/snoop.png"
-      },
-      {
-        name: "lewis",
-        image: "assets/images/lewis.png"
-      },
+      }
     ]
   },
 

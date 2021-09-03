@@ -3,29 +3,29 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <img
-          class="logo"
-          src="/assets/images/logo.png"
-          alt="Instagram"
-          width="130"
-        />
+        <div class="logo">
+          facebook
+        </div>
 
         <ion-buttons slot="end">
           <ion-button>
-            <ion-icon :icon="addCircleOutline"></ion-icon>
+            <ion-icon :icon="search"></ion-icon>
           </ion-button>
           <ion-button>
-            <ion-icon :icon="heartOutline"></ion-icon>
-          </ion-button>
-          <ion-button>
-            <ion-icon :icon="paperPlaneOutline"></ion-icon>
+            <ion-icon :icon="chatbubbleOutline"></ion-icon>
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
+      <div class="menu">
+        <ion-button v-for="(i, idx) in menu" :key="idx">
+          <ion-icon :icon="i"></ion-icon>
+        </ion-button>
+      </div>
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <!-- <Stories :data="stories" /> -->
+      <StatusInput />
+      <Stories :data="stories" />
 
       <ion-card v-for="(item, index) in posts" :key="index">
         <div class="post-author">
@@ -55,7 +55,8 @@
 
 <script>
 import Reactions from "./../components/Reactions";
-// import Stories from "./../components/Stories";
+import Stories from "./../components/Stories";
+import StatusInput from "./../components/StatusInput";
 
 import {
   IonPage,
@@ -75,11 +76,16 @@ import {
   search, 
   filterOutline, 
   closeOutline, 
-  addCircleOutline, 
   heartOutline, 
   paperPlaneOutline, 
   chatbubbleOutline, 
-  heart 
+  heart,
+  notificationsOutline,
+  tvOutline,
+  menuOutline,
+  peopleCircleOutline,
+  home,
+  storefrontOutline
 } from "ionicons/icons";
 
 export default {
@@ -96,19 +102,28 @@ export default {
     IonCardHeader,
     IonCardSubtitle,
     Reactions,
-    // Stories
+    Stories,
+    StatusInput
   },
   setup() {
+    const menu = [
+      home,
+      peopleCircleOutline,
+      tvOutline,
+      storefrontOutline,
+      notificationsOutline,
+      menuOutline
+    ]
     return {
       search,
       filterOutline,
       closeOutline,
-      addCircleOutline,
       heartOutline,
       paperPlaneOutline,
       personCircleOutline,
       chatbubbleOutline,
-      heart
+      heart,
+      menu
     };
   },
   data() {
@@ -152,14 +167,37 @@ export default {
 
 <style lang="scss" scoped>
 ion-toolbar {
-  --background: #000;
+  --background: var(--ion-color-light);
   color: #ffffff;
   padding: 0;
 }
 
 .logo {
   padding: 10px 0 0 10px;
+  font-weight: bolder;
+  font-size: 26px;
 }
+
+.menu {
+  background: var(--ion-color-light);
+  ion-button {
+    --background: none;
+    font-size: 20px;
+
+    &::part(native) {
+      padding: 10px;
+      margin: 5px;
+      // background: blue;
+    }
+
+    ion-icon {
+      --background: blue;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
 .post-author {
   margin: 10px;
   color: #ffffff;
@@ -179,8 +217,8 @@ ion-toolbar {
 }
 
 ion-card {
-  --background: none;
-  margin: 0;
+  --background: var(--ion-color-light);
+  margin: 10px 0;
 }
 
 ion-card-header {
