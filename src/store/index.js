@@ -5,32 +5,37 @@ const store = createStore({
     posts: [
       {
         name: "Snoop Dogg",
-        image: "assets/images/brazil.jpg",
+        image: "assets/images/snoop-dogg-wine-01.jpeg",
         pic: "assets/images/snoop.png",
         id: 1,
         likes: 22349,
+        timestamp: "18m ago",
         description:
           "All about Brazil, suspendisse lobortis pharetra tempor. Cras eleifend ante sed arcu interdum, in bibendum enim ultricies. Integer rutrum quis risus at tempor."
       },
       {
         name: "Brooke Shaden",
-        image: "assets/images/hawaii.jpg",
-        id: 3
+        image: "assets/images/shaden21.jpeg",
+        pic: "assets/images/Brooke-Shaden.jpeg",
+        id: 3,
+        timestamp: "45m ago",
       },
       {
         name: "Makazole Mapimpi",
-        image: "assets/images/panama.jpg",
+        image: "assets/images/makazole-am.jpeg",
         pic: "assets/images/makazole.png",
         id: 2,
         likes: 390,
+        timestamp: "1h ago",
         description:
-          "all about panama. Nam fermentum, leo ac lobortis tincidunt, justo felis semper nisi, sed facilisis quam ante a justo. Nam pulvinar nibh nec mi vestibulum cursus quis eget orci. Aenean faucibus faucibus ex, a imperdiet nibh luctus faucibus. Mauris porttitor, velit ac eleifend mattis, sem justo accumsan odio, ut mattis nulla nulla eu nibh."
+          "Vestibulum cursus quis eget orci. Aenean faucibus faucibus."
       },
       {
         name: "Lewis Hamilton",
         slug: "jamaica",
-        image: "assets/images/jamaica.jpg",
+        image: "assets/images/lewis-angela.jpg",
         pic: "assets/images/lewis.png",
+        timestamp: "3h ago",
         id: 4
       },
     ],

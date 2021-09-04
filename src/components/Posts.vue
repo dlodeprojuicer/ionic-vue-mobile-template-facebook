@@ -7,7 +7,7 @@
         </ion-col>
         <ion-col class="author">
           {{ item.name }}
-          <div class="timestamp">18m ago</div>
+          <div class="timestamp">{{ item.timestamp }}</div>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -134,14 +134,10 @@ ion-card {
   --border-radius: none;
 }
 
-ion-card-header {
-  padding: 10px;
-}
-
-.caption {
-  font-weight: 300;
-  color: #fff;
+ion-card-header.caption {
+  color: #ffffff;
   font-size: 16px;
   margin-bottom: 5px;
+  padding: 10px;
 }
 </style>

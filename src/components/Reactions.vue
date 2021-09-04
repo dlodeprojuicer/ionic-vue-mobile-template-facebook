@@ -63,7 +63,7 @@ export default {
   grid-template-columns: 33% 33% 33%;
   color: #fff;
   ion-button, button {
-    font-size: 13px;
+    font-size: 11px;
     margin: 5px;
 
     &:nth-child(2) {
