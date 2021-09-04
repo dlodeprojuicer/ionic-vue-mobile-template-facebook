@@ -17,7 +17,7 @@ npm run serve
 ```
 
 ## Design
-![Screenshot|300x484, 70%](/design.jpg "Screenshot")
+![Screenshot|300x484, 70%](/design.png "Screenshot")
 
 ## Native
 
