@@ -166,10 +166,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-ion-toolbar {
+ion-toolbar, ion-header {
   --background: var(--ion-color-light);
   color: #ffffff;
   padding: 0;
+  margin: 0;
 }
 
 .logo {
@@ -186,7 +187,7 @@ ion-toolbar {
 
     &::part(native) {
       padding: 10px;
-      margin: 5px;
+      margin: 0 5px;
       // background: blue;
     }
 

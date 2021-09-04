@@ -8,8 +8,8 @@ http://ionicframework.com/docs/theming/ */
   --ion-color-primary-shade: #FFFFFF;
 
   --ion-color-light: #202122;
-  --ion-color-medium: #e6e5e5;
-  --ion-color-medium-tint: #FFFFFF;
+  --ion-color-medium: rgb(49, 49, 49);
+  --ion-color-medium-tint: #d3cece;
   --ion-color-medium-shade: #FFFFFF;
   --ion-color-medium-contrast:#FFFFFF;
   --ion-background-color: #151516;

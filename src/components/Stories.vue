@@ -30,6 +30,7 @@ export default {
 ion-slide {
   width: 105px !important;
   margin: 10px 0;
+  padding: 5px 0;
   background: var(--ion-color-light);
 }
 
