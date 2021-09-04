@@ -69,9 +69,13 @@ img {
   padding: 5px 0;
 
   ion-col {
-    border-right: 1px solid var(--ion-color-medium);
     font-weight: bold;
     color: var(--ion-color-medium-tint);
+
+    &:nth-child(2) {
+      border-right: 1px solid var(--ion-color-medium);
+      border-left: 1px solid var(--ion-color-medium);
+    }
     
     ion-icon { // needs cleanup, looks hacky.
       position: absolute;

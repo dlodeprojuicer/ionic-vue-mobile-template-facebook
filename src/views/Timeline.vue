@@ -26,37 +26,15 @@
     <ion-content :fullscreen="true">
       <StatusInput />
       <Stories :data="stories" />
-
-      <ion-card v-for="(item, index) in posts" :key="index">
-        <div class="post-author">
-          <ion-icon :icon="personCircleOutline"></ion-icon> 
-          <span>{{ item.name }}</span>
-        </div>
-
-        <img
-          class="card-image"
-          :src="item.image"
-          :alt="item.name"
-          @click="likeDoubleClick()"
-        />
-
-        <Reactions :likePost="likePost" @likeClick="likeClick" />
-
-        <ion-card-header>
-          <ion-card-subtitle class="likes" v-if="item.likes > 0">{{ item.likes }} likes</ion-card-subtitle>
-          <div class="author" v-if="item.description">
-            {{ item.name }} <span class="description">{{ item.description }}</span>
-          </div>
-        </ion-card-header>
-      </ion-card>
+      <Posts :data="posts" />
     </ion-content>
   </ion-page>
 </template>
 
 <script>
-import Reactions from "./../components/Reactions";
 import Stories from "./../components/Stories";
 import StatusInput from "./../components/StatusInput";
+import Posts from "./../components/Posts";
 
 import {
   IonPage,
@@ -65,27 +43,18 @@ import {
   IonButtons,
   IonButton,
   IonIcon,
-  IonContent,
-  IonCard,
-  IonCardHeader,
-  IonCardSubtitle
+  IonContent
 } from "@ionic/vue";
 
 import { 
-  personCircleOutline, 
-  search, 
-  filterOutline, 
-  closeOutline, 
-  heartOutline, 
-  paperPlaneOutline, 
-  chatbubbleOutline, 
-  heart,
-  notificationsOutline,
-  tvOutline,
-  menuOutline,
-  peopleCircleOutline,
   home,
-  storefrontOutline
+  peopleCircleOutline,
+  tvOutline,
+  storefrontOutline,
+  search,  
+  notificationsOutline,
+  chatbubbleOutline, 
+  menuOutline
 } from "ionicons/icons";
 
 export default {
@@ -98,12 +67,9 @@ export default {
     IonButton,
     IonButtons,
     IonContent,
-    IonCard,
-    IonCardHeader,
-    IonCardSubtitle,
-    Reactions,
     Stories,
-    StatusInput
+    StatusInput,
+    Posts
   },
   setup() {
     const menu = [
@@ -116,22 +82,9 @@ export default {
     ]
     return {
       search,
-      filterOutline,
-      closeOutline,
-      heartOutline,
-      paperPlaneOutline,
-      personCircleOutline,
       chatbubbleOutline,
-      heart,
       menu
     };
-  },
-  data() {
-    return {
-      likePost: false,
-      click: undefined,
-      clickType: 'Click or Doubleclick ME'
-    }
   },
   computed: {
     posts() {
@@ -139,27 +92,6 @@ export default {
     },
     stories() {
       return this.$store.getters.stories;
-    }
-  },
-  methods: {
-    likeDoubleClick() {
-      return new Promise ((resolve) => {
-        if (this.click) {
-          clearTimeout(this.click)
-          resolve('Detected DoubleClick');
-          this.likePost = !this.likePost;
-          this.click = undefined;
-          return;
-        }
-
-        this.click = setTimeout(() => {
-         this.click = undefined;
-         resolve('Detected SingleClick')
-        }, 400)
-      })
-    },
-    likeClick() {
-      this.likePost = !this.likePost;
     }
   }
 };

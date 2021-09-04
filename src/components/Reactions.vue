@@ -2,13 +2,13 @@
 <template>
 	<ion-buttons class="reactions">
 		<ion-button @click="likeFn">
-			<ion-icon :icon="likePost ? heart : heartOutline" :style="likePost ? 'color: red;' : null"></ion-icon>
+			<ion-icon :icon="likePost ? thumbsUp : thumbsUpOutline"></ion-icon> Like
 		</ion-button>
 		<ion-button>
-			<ion-icon :icon="chatbubbleOutline"></ion-icon>
+			<ion-icon :icon="chatboxOutline"></ion-icon> Comment
 		</ion-button>
 		<ion-button>
-			<ion-icon :icon="paperPlaneOutline"></ion-icon>
+			<ion-icon :icon="arrowRedoOutline"></ion-icon> Share
 		</ion-button>
 	</ion-buttons>
 </template>
@@ -21,10 +21,10 @@ import {
 } from "@ionic/vue";
 
 import { 
-  heartOutline, 
-  paperPlaneOutline, 
-  chatbubbleOutline, 
-  heart 
+  thumbsUpOutline,
+  thumbsUp,
+  chatboxOutline,
+  arrowRedoOutline
 } from "ionicons/icons";
 
 export default {
@@ -43,10 +43,10 @@ export default {
 	},
   setup() {
     return {
-      heartOutline,
-      paperPlaneOutline,
-      chatbubbleOutline,
-      heart
+      thumbsUpOutline,
+      chatboxOutline,
+      arrowRedoOutline,
+      thumbsUp
     };
   },
   methods: {
@@ -59,10 +59,21 @@ export default {
 
 <style lang="scss" scoped>
 .reactions {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
   color: #fff;
   ion-button, button {
-    margin: 0;
-    padding: 0;
+    font-size: 13px;
+    margin: 5px;
+
+    &:nth-child(2) {
+      border-right: 1px solid var(--ion-color-medium);
+      border-left: 1px solid var(--ion-color-medium);
+    }
+
+    ion-icon {
+      margin-right: 7px;
+    }
   }
 }
 </style>
