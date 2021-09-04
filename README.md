@@ -1,10 +1,10 @@
-## Ionic Vue Facebook Template (W.I.P)
+## Ionic Vue Facebook Template
 
 ![Netlify Status](https://api.netlify.com/api/v1/badges/fc2b8d51-2242-440c-8f6c-f283e77154c4/deploy-status)
 
-Instagram-inspired [Ionic Vue](https://ionicframework.com/vue) template.
+Facebook android dark mode inspired [Ionic Vue](https://ionicframework.com/vue) template.
 
-[Demo](https://ionic-vue-mobile-template-06.netlify.app)
+[Demo](https://ionic-vue-mobile-template-facebook.netlify.app)
 
 ## Project setup
 ```
@@ -17,7 +17,7 @@ npm run serve
 ```
 
 ## Design
-![Screenshot|316x500, 75%](/design.jpg "Screenshot")
+![Screenshot|300x484, 70%](/design.jpg "Screenshot")
 
 ## Native
 
@@ -59,7 +59,6 @@ I want to keep doing these templates for free for as long as possible. I have jo
 Alternatively, you can buy me a coffee <a href="https://www.buymeacoffee.com/simomafuxwana" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="120px" height="30px" style="height: 30px !important;width: 120px !important;" ></a>
 
 ## Credits
-- [Carlos Martinez](https://github.com/cmartinezone/IonicVueExplorePlaces)
 - [Tami Maiwashe](https://www.linkedin.com/in/tami-maiwashe-32824a19a/) - Documentation
 
 ## Contact
