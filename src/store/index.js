@@ -11,7 +11,7 @@ const store = createStore({
         likes: 22349,
         timestamp: "18m ago",
         description:
-          "All about Brazil, suspendisse lobortis pharetra tempor. Cras eleifend ante sed arcu interdum, in bibendum enim ultricies. Integer rutrum quis risus at tempor."
+          "All about Brazil, suspendisse lobortis pharetra tempor. Cras eleifend ante sed arcu interdum, in bibendum enim ultricies. Integer rutrum quis risus at tempor.",
       },
       {
         name: "Brooke Shaden",
@@ -28,7 +28,7 @@ const store = createStore({
         likes: 390,
         timestamp: "1h ago",
         description:
-          "Vestibulum cursus quis eget orci. Aenean faucibus faucibus."
+          "Vestibulum cursus quis eget orci. Aenean faucibus faucibus.",
       },
       {
         name: "Lewis Hamilton",
@@ -36,31 +36,31 @@ const store = createStore({
         image: "assets/images/lewis-angela.jpg",
         pic: "assets/images/lewis.png",
         timestamp: "3h ago",
-        id: 4
+        id: 4,
       },
     ],
     stories: [
       {
         name: "makazole",
-        image: "assets/images/makazole.png"
+        image: "assets/images/makazole.png",
       },
       {
         name: "jay-z",
-        image: "assets/images/jay-z.jpg"
+        image: "assets/images/jay-z.jpg",
       },
       {
         name: "lewis",
-        image: "assets/images/lewis.png"
+        image: "assets/images/lewis.png",
       },
       {
         name: "snoop",
-        image: "assets/images/snoop.png"
+        image: "assets/images/snoop.png",
       },
       {
         name: "max",
-        image: "assets/images/max.png"
-      }
-    ]
+        image: "assets/images/max.png",
+      },
+    ],
   },
 
   getters: {
@@ -69,7 +69,7 @@ const store = createStore({
     },
     stories({ stories }) {
       return stories;
-    }
+    },
   },
   mutations: {},
   actions: {},

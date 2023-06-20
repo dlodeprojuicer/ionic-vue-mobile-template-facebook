@@ -1,26 +1,35 @@
 <template>
-  <ion-slides>
-    <ion-slide v-for="(item, index) in data" :key="index">
+  <swiper>
+    <swiper-slide
+      v-for="(item, index) in data"
+      :key="index"
+      :spaceBetween="30"
+      :slidesPerView="3"
+    >
       <ion-card :class="item.name">
         <img :src="item.image" width="100%" />
-          <h3>{{ item.name }} {{ item.lastname }}</h3>
+        <h3>{{ item.name }} {{ item.lastname }}</h3>
       </ion-card>
-    </ion-slide>
-  </ion-slides>
+    </swiper-slide>
+  </swiper>
 </template>
 
 <script>
-import { IonSlides, IonSlide, IonCard, } from "@ionic/vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { IonCard } from "@ionic/vue";
+
+import "swiper/css";
+import "@ionic/vue/css/ionic-swiper.css";
 
 export default {
   name: "people",
-  components: { IonSlides, IonSlide, IonCard },
+  components: { Swiper, SwiperSlide, IonCard },
   props: {
     data: {
       type: Array,
       required: true,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   methods: {},
 };
@@ -52,11 +61,11 @@ ion-card {
   }
 
   h3 {
-   color: #fff;
-   position: absolute;
-   bottom: 0px;
-   left: 5px;
-   font-size: 15px;
+    color: #fff;
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    font-size: 15px;
   }
 
   &.jay-z {
@@ -64,7 +73,6 @@ ion-card {
     background-size: cover;
     background-position: center;
   }
-
 
   &.snoop {
     background-image: url("/assets/images/snoop-story.jpeg");

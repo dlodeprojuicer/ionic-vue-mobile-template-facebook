@@ -27,67 +27,59 @@
 </template>
 
 <script>
-import Reactions from "./Reactions";
+import Reactions from "./Reactions.vue";
 
-import { 
-  IonCard,
-  IonCardHeader,
-  IonGrid,
-  IonRow,
-  IonCol
-} from "@ionic/vue";
+import { IonCard, IonCardHeader, IonGrid, IonRow, IonCol } from "@ionic/vue";
 
-import { 
-  personCircleOutline,
-} from "ionicons/icons";
+import { personCircleOutline } from "ionicons/icons";
 
 export default {
   name: "people",
-  components: { 
+  components: {
     Reactions,
     IonGrid,
     IonRow,
     IonCol,
     IonCard,
-    IonCardHeader
+    IonCardHeader,
   },
   props: {
     data: {
       type: Array,
       required: true,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   data() {
     return {
       likePost: false,
-    }
+    };
   },
   setup() {
     return {
-      personCircleOutline
-    }
+      personCircleOutline,
+    };
   },
   methods: {
     likeDoubleClick() {
-      return new Promise ((resolve) => {
+      return new Promise((resolve) => {
         if (this.click) {
-          clearTimeout(this.click)
-          resolve('Detected DoubleClick');
+          clearTimeout(this.click);
+          resolve("Detected DoubleClick");
           this.likePost = !this.likePost;
           this.click = undefined;
           return;
         }
 
         this.click = setTimeout(() => {
-         this.click = undefined;
-         resolve('Detected SingleClick')
-        }, 400)
-      })
+          this.click = undefined;
+          resolve("Detected SingleClick");
+        }, 400);
+      });
     },
     likeClick() {
       this.likePost = !this.likePost;
-    }
+    },
   },
 };
 </script>

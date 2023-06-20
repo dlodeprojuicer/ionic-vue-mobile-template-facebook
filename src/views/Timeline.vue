@@ -3,9 +3,7 @@
   <ion-page>
     <ion-header :translucent="true">
       <ion-toolbar>
-        <div class="logo">
-          facebook
-        </div>
+        <div class="logo">facebook</div>
 
         <ion-buttons slot="end">
           <ion-button>
@@ -25,16 +23,16 @@
 
     <ion-content :fullscreen="true">
       <StatusInput />
-      <Stories :data="stories" />
+      <!-- <Stories :data="stories" /> -->
       <Posts :data="posts" />
     </ion-content>
   </ion-page>
 </template>
 
 <script>
-import Stories from "./../components/Stories";
-import StatusInput from "./../components/StatusInput";
-import Posts from "./../components/Posts";
+// import Stories from "../components/Stories.vue";
+import StatusInput from "../components/StatusInput.vue";
+import Posts from "../components/Posts.vue";
 
 import {
   IonPage,
@@ -43,18 +41,18 @@ import {
   IonButtons,
   IonButton,
   IonIcon,
-  IonContent
+  IonContent,
 } from "@ionic/vue";
 
-import { 
+import {
   home,
   peopleCircleOutline,
   tvOutline,
   storefrontOutline,
-  search,  
+  search,
   notificationsOutline,
-  chatbubbleOutline, 
-  menuOutline
+  chatbubbleOutline,
+  menuOutline,
 } from "ionicons/icons";
 
 export default {
@@ -67,9 +65,9 @@ export default {
     IonButton,
     IonButtons,
     IonContent,
-    Stories,
+    // Stories,
     StatusInput,
-    Posts
+    Posts,
   },
   setup() {
     const menu = [
@@ -78,12 +76,12 @@ export default {
       tvOutline,
       storefrontOutline,
       notificationsOutline,
-      menuOutline
-    ]
+      menuOutline,
+    ];
     return {
       search,
       chatbubbleOutline,
-      menu
+      menu,
     };
   },
   computed: {
@@ -92,13 +90,14 @@ export default {
     },
     stories() {
       return this.$store.getters.stories;
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-ion-toolbar, ion-header {
+ion-toolbar,
+ion-header {
   --background: var(--ion-color-light);
   color: #ffffff;
   padding: 0;

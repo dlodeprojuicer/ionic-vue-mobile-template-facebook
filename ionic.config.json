@@ -1,7 +1,7 @@
 {
-  "name": "ionic-blank",
+  "name": "facebook",
   "integrations": {
     "capacitor": {}
   },
-  "type": "vue"
+  "type": "vue-vite"
 }
